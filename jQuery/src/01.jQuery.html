@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../lib/jquery-1.12.3.js"></script>
+    <!--原生调用-->
+    <script type="text/javascript">
+        window.onload=function () {
+            var btn1=document.getElementById("btn1");
+             btn1.onclick=function () {
+                 var uinput=document.getElementById("username").value;
+                 alert(uinput);
+             }
+
+        }
+    </script>
+
+    <!--采用jQuery方式调用-->
+    <script type="text/javascript">
+        $(function () {
+            var $btn2=$("#btn2");
+            $btn2.click(function () {
+                var uinput2=$("#username").val();
+                alert(uinput2);
+            })
+        })
+
+    </script>
+</head>
+<body>
+    用户名：<input type="text" id="username">
+    <button id="btn1">确定(原生版)</button>
+    <button id="btn2">确定(jQuery版)</button>
+</body>
+</html>

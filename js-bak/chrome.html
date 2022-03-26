@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hahaha</title>
+
+</head>
+<body>
+    <h1>hahaaaah</h1>
+
+    <script type="text/javascript">
+        //练习控制台输出信息
+
+        // console.dir(document.body);
+
+        //01.错误提示信息的使用  console.error
+        //可以通过IDEA的console进行栈追踪
+        let fuel=99;
+        function launch_rocket(){
+            function warning_msg(){
+                console.error("Not enough fuel.");
+            }
+            if(fuel>=100)
+            {
+                console.log("enough fuel!");
+            }
+            else
+            {
+                warning_msg();
+            }
+        }
+        launch_rocket();
+
+
+        //02.利用console.time()和console.timeEnd()函数跟踪函数运行的时间
+        //示例
+        console.time();
+        let arr= new Array(10000);
+        for(let i=0;i<arr.length;i++)
+        {
+            arr[i]=new Object();
+        }
+        console.timeEnd();
+
+
+
+
+
+        console.log(111);
+
+
+    </script>
+</body>
+</html>

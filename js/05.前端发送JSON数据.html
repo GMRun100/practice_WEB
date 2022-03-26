@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端发送JSON数据</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <a href="javascript:sendJson()">发送Json数据</a>
+
+    <script type="text/javascript">
+        <!--发送json数据到servlet处理 -->
+        var jsonarr={
+            "name":"guomeng",
+            "url":"asdasdadsad",
+        }
+        function sendJson() {
+            $.ajax({
+                type : "POST",
+                url : "http://localhost:3000/",
+                dataType: "json",
+                data : {
+                    "name":"guomeng",
+                    "url":"asdasdadsad",
+                },
+                success : function(msg, status) {
+                    alert("请求提交后得到了成功的响应");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

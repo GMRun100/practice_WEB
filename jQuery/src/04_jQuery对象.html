@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象</title>
+    <script type="text/javascript" src="../lib/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <button>测试一</button>
+    <button>测试二</button>
+    <button id="btn3">测试三</button>
+    <button>测试四</button>
+
+    <script>
+
+        // 需求1. 统计一共有多少个按钮
+        var $buttons=$("button");
+        console.log( $buttons.length,$buttons.size());
+
+        // 需求2. 取出第2个button的文本
+
+        console.log($buttons[1].innerHTML,$buttons.get(1).innerHTML);
+        // 需求3. 输出所有button标签的文本
+        $buttons.each(function (index,idom) {
+            console.log(idom.innerHTML);
+        })
+        // 需求4. 输出'测试三'按钮是所有按钮中的第几个
+        /*index(): 得到在所在兄弟元素中的下标*/
+        console.log($("#btn3").index());
+
+    </script>
+
+</body>
+</html>

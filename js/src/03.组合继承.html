@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组合继承</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //定义对象
+        //在js中没有类的概念，是通过function来定义对象
+        function Person(name,age) {
+            //在对象的构造函数中只定义属性
+            this.name=name;
+            this.age=age;
+        }
+        //通过原型对象来添加方法
+        Person.prototype.setName=function (name) {
+                this.name=name;
+        }
+
+        //定义学生对象
+        function Student(name,age,price) {
+            //通过调用父对象的构造函数来添加属性，但是实际上并不属于继承
+            Person.call(this,name,age);
+            this.price=price;
+        }
+        //将子对象的显式原型指向父对象的实例，这样就可以应用父对象的方法
+        Student.prototype=new Person();
+        Student.prototype.constructor=Student;
+        Student.prototype.setPrice=function (price) {
+                this.price=price;
+        }
+
+        var stu=new Student("Tom",18,10000);
+        document.write(stu.name,stu.age,stu.price);
+        stu.setName("Jack");
+        stu.setPrice(20000);
+        document.write(stu.name,stu.age,stu.price);
+
+    </script>
+
+</body>
+</html>

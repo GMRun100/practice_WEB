@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09_$工具方法</title>
+    <script type="text/javascript" src="../lib/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        // 1. $.each(): 遍历数组或对象中的数据
+        var cars = ["Tesla", "Volvo", "BMW"];
+        $.each(cars,function (i,n) {
+            console.log( "Item #" + i + ": " + n );
+        })
+
+        // 2. $.trim(): 去除字符串两边的空格
+        var strs="   aaa   bbbbb";
+        console.log($.trim(strs));
+
+        // 3. $.type(obj): 得到数据的类型
+        console.log($.type(cars));
+        console.log($.trim($));
+
+        // 4. $.isArray(obj): 判断是否是数组
+        console.log($.isArray(cars));
+        // 5. $.isFunction(obj): 判断是否是函数
+        console.log($.isFunction($));
+        // 6. $.parseJSON(json) : 解析json字符串转换为js对象/数组
+        var json='{"name":"zhangsan","age":"18"}';
+        console.log($.parseJSON(json));
+
+
+    </script>
+
+
+
+</body>
+</html>

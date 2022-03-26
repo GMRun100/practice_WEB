@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导入与导出</title>
+
+    <script type="module">
+        //导入导出单个定义
+        // import {Mouse} from "./mouse.js";
+        // let mouse=new Mouse();
+        // mouse.x=20;
+        // console.log(mouse.x);
+    </script>
+    <script type="text/javascript">
+        //导入多个函数定义
+        //此处利用了node的模块化思想
+
+        var math=require("./math.js");
+        console.log("add="+add(1,2));
+        console.log("multiply="+multiply(3,4));
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
